@@ -123,7 +123,7 @@ class Leaderboard extends React.Component {
 
                   return (
                     <li key={key}>
-                      {game.player1} et {game.player2} se sont sauvé en{" "}
+                      {game.player1} et {game.player2} se sont sauvés en{" "}
                       {ended.diff(started, "minute")} minutes
                     </li>
                   );
