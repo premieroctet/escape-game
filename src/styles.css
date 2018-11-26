@@ -1,4 +1,15 @@
-.App {
-  font-family: sans-serif;
-  text-align: center;
+body {
+  background: url(./img/bg-main.png);
+  font-family: 'Open Sans', Arial, sans-serif;
+  color: white;
+}
+
+#canvas {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: -100;
 }

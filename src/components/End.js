@@ -1,6 +1,6 @@
 import React from "react";
 import { withFirebase } from "../FirebaseContext";
-import { Button } from "reakit";
+import { Button, Heading } from "reakit";
 
 class End extends React.Component {
   state = {
@@ -53,9 +53,9 @@ class End extends React.Component {
     return (
       <React.Fragment>
         {runningGame ? (
-          <button onClick={this.endGame}>Appeler les secours</button>
+          <Button onClick={this.endGame}>Appeler les secours</Button>
         ) : (
-          <h1>Commande de secours indisponible</h1>
+          <Heading>Commande de secours indisponible</Heading>
         )}
       </React.Fragment>
     );
