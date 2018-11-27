@@ -98,10 +98,10 @@ export default class Container extends React.Component {
 
     render() {
         return (
-            <div>
+            <React.Fragment>
                 {this.props.children}
                 <canvas id="canvas"></canvas>
-            </div>
+            </React.Fragment>
         )
     }
 }

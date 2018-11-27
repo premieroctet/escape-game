@@ -20,8 +20,8 @@ const theme = {
 }
 
 const ROUTES = {
-  Leaderboard: "/leaderboard",
-  End: "/"
+  Leaderboard: "/",
+  End: "/end"
 };
 
 const firebaseInstance = new Firebase();

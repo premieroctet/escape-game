@@ -4,6 +4,16 @@ body {
   color: white;
 }
 
+body, html {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+#root {
+  height: 100%;
+}
+
 #canvas {
     height: 100%;
     width: 100%;
