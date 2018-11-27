@@ -17,6 +17,8 @@ class Leaderboard extends React.Component {
   }
 
   componentDidMount() {
+    this.props.firebase.askForPermissioToReceiveNotifications();
+
     this.props.firebase
       .games()
       .orderBy("startedAt", "desc")
