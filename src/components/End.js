@@ -53,6 +53,8 @@ class End extends React.Component {
   endGame = () => {
     const { runningGame } = this.state;
     if (runningGame) {
+      this.setState({ gameEnded: true });
+
       this.props.firebase
         .games()
         .doc(runningGame.id)
@@ -60,7 +62,6 @@ class End extends React.Component {
           endedAt: new Date()
         })
         .then(() => {
-          this.setState({ gameEnded: true });
           setTimeout(() => {
             this.setState({ gameEnded: false });
           }, 10000);
