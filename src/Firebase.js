@@ -23,16 +23,31 @@ class Firebase {
   };
 
   askForPermissioToReceiveNotifications = async () => {
+    const messaging = firebase.messaging();
+    messaging.usePublicVapidKey("BL9f6pv76RE9F64Md-Yl-BHAl88X1i8jZBaEzA7eCOJB_U77Agm-qibxc0px0klu31HLUXbjwklfUJMTw8H5_vw");
+
     try {
-      const messaging = firebase.messaging();
       await messaging.requestPermission();
       const token = await messaging.getToken();
       console.log('token:', token);
+      this.subscribeTokenToTopic(token, 'notifications')
 
       return token;
     } catch (error) {
       console.error(error);
     }
+
+    messaging.onMessage(payload => {
+      console.log("Notification Received", payload);
+   });
+  }
+
+  subscribeTokenToTopic = (token) => {
+    fetch(`https://europe-west1-escape-game-7abf7.cloudfunctions.net/app/subscribe/${token}`).then(response => {
+      console.log('Subscribed', response);
+    }).catch(error => {
+      console.error(error);
+    })
   }
 }
 
